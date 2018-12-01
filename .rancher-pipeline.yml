@@ -14,7 +14,9 @@ stages:
   - publishImageConfig:
       dockerfilePath: ./Dockerfile
       buildContext: .
-      tag: example-helloserver:${CICD_EXECUTION_SEQUENCE}
+      tag: tengyue360/example-helloserver:${CICD_EXECUTION_SEQUENCE}
+      pushRemote: true
+      registry: harbor.tengyue360.com
 - name: Deploy
   steps:
   - applyYamlConfig:
